@@ -1,0 +1,20 @@
+.aln_centro{
+    text-align: center;
+}
+.img_produtos{
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    height: auto;
+}
+.fundo{
+    background-color: #ccccff;
+    
+}
+.fundo_menu{
+    background-color: #339900;;
+}
+.item{
+    height: 300px;
+    overflow: hidden;
+}
