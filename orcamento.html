@@ -96,7 +96,7 @@
                                     <label  for="exampleFormControlTextarea1">Observações e mensagens:</label>
                                     <textarea name="observacao" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>                          
-                                <button style="width: 100%;" type="submit" class="btn btn-outline-dark">Enviar Respostas</button>
+                                <button style="width: 100%;" type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#confirmaenvio">Enviar Respostas</button>
                             </form>
 
                         </div>
@@ -180,10 +180,32 @@
             </div>
             <!--/.footer-bottom-->
         </footer>
+        <div class="modal" id="confirmaenvio" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" style="color:green;">Dados Eviados com sucesso!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script>
-            $('button[type=submit]').click( function(event) {
-                          var formdata = new FormData($("#myform"));
-               console.log(formdata); 
+            $('#cadastro').submit(function (event) {
+                event.preventDefault();
+            });
+            $('button[type=submit]').click(function () {
+
+                $("#confirmaenvio .modal-body").html('Seus dados foram enviados ' + $('#nome').val());
+
             });
         </script>
     </body>
